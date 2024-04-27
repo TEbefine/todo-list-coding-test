@@ -10,7 +10,7 @@ const todoListsSlice = createSlice({
       state.push(action.payload);
     },
     removeTodoList: (state, action) => {
-      return state.filter((text) => text.name !== action.payload.name);
+      return state.filter((text) => text !== action.payload);
     },
   },
 });

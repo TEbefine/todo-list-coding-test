@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import TodoLists from "./features/todoLists/TodoLists";
 import "./App.css";
 import { addTodoLists } from "./features/todoLists/todoListsSlice";
+import PersistLists from "./features/persistLists/PersistLists";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
       <main>
         <section className="persist-section">
           <h2 className="header">Important Todo list</h2>
+          <PersistLists />
         </section>
         <section className="todo-section">
           <h2 className="header">Todo list</h2>
