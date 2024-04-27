@@ -21,9 +21,9 @@ function TodoLists() {
           <TextTodo text={text} key={text.id} check="nomal">
             <PersistButton
               onClickHandler={() => onAddPersistHandler(text)}
-              icon={`/image/important.png`}
+              icon={`/image/favourite.png`}
             >
-              Add to Favorites
+              <img className="star-icon" src="/image/favouriteY.png" alt="star" width="18" />
             </PersistButton>
           </TextTodo>
         </div>

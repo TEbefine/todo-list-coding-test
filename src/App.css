@@ -11,7 +11,7 @@
 }
 
 header {
-  margin: 3em;
+  margin: 4em;
   display: grid;
 }
 
@@ -48,11 +48,18 @@ header button:hover {
 }
 /* main */
 main h2 {
-  font-size: 2em;
+  font-size: 1.3em;
+  margin-bottom: 1.5em;
+}
+.persist-section{
+margin-bottom: 50px;
 }
 
 .Todo-container {
-  justify-content: center;
+  display: block;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%; 
 
 }
 
@@ -60,5 +67,81 @@ main h2 {
   align-items: center;
   display: flex;
   justify-content: center;
+  justify-self: center;
+  margin-bottom: 20px;
+  font-size: 0.75em;
+  font-weight: 100;
 }
 
+.deleteBtn {
+  background-color: transparent; 
+  border: none;
+  padding: 4px 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: background-color 0.4s ease;
+}
+
+.deleteBtn:hover {
+  background-color: #eee;
+  opacity: 0.8;
+  color: #fff;
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:checked::after {
+  content: "\2714";
+  font-size: 12px; 
+  line-height: 16px; 
+  color: #000;
+  position: absolute; 
+  top: 57%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.persist-button {
+  background-color: transparent;
+  border: none;
+  padding: 8px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 20px;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.important-icon {
+  opacity: 0.8;
+}
+
+.star-icon,
+.important-icon {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.star-icon {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.star-icon:hover {
+  opacity: 1;
+}

@@ -16,11 +16,11 @@ export default function TextTodo({ text, children, check }) {
 
   return (
     <div key={text.id} className="text" tabIndex={0}>
-      <input type="checkbox" id="scales" name="scales" />
+      <input type="checkbox" id="scales" name="scales" className="checkbox" />
       {children}
       <h3 className="text-name">{text}</h3>
-      <button onClick={() => onRemoveTodoHandler(text)}>
-        <img src="/image/close.png" alt="delete" width="15px" />
+      <button className="deleteBtn" onClick={() => onRemoveTodoHandler(text)}>
+        <img src="/image/close.png" alt="delete" width="12px" />
       </button>
     </div>
   );

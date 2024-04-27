@@ -28,7 +28,7 @@ function App() {
             value={text}
             onChange={(e) => setText(e.currentTarget.value)}
             type="text"
-            placeholder="What do you want to do"
+            placeholder="Enter your task here"
             required
           />
           <div>
@@ -42,7 +42,7 @@ function App() {
           <PersistLists />
         </section>
         <section className="todo-section">
-          <h2 className="header">Todo list</h2>
+          <h2 className="header">Tasks</h2>
             <TodoLists />
         </section>
       </main>

@@ -14,10 +14,6 @@ function PersistLists() {
     dispatch(removePersistLists(text));
   };
 
-  const onRemoveHandler = (text) => {
-    dispatch(removePersistLists(text));
-  };
-
   return (
     <div className="Todo-container">
       {persistTodo.map((text) => (
@@ -25,9 +21,9 @@ function PersistLists() {
           <TextTodo text={text} key={text.id} check="persist">
             <PersistButton
               onClickHandler={() => onRemovePersistHandler(text)}
-              icon={`/image/cancelled.png`}
+              icon={`/image/favouriteF.png`}
             >
-              remove
+              <img className="star-icon" src="/image/cancelled.png" alt="star" width="18" />
             </PersistButton>
           </TextTodo>
         </>

@@ -3,7 +3,12 @@ import React from "react";
 function PersistButton({ children, onClickHandler, icon }) {
   return (
     <button className="persist-button" onClick={onClickHandler}>
-      <img className="heart-icon" alt="" src={icon} width="30px" />
+      <img
+        className="important-icon"
+        alt="important icon"
+        src={icon}
+        width="18px"
+      />
       {children}
     </button>
   );
