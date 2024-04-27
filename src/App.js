@@ -1,56 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import TodoLists from "./features/todoLists/TodoLists";
+import "./App.css";
+import { addTodoLists } from "./features/todoLists/todoListsSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  const [text, setText] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.length === 0) {
+      return;
+    }
+
+    dispatch(addTodoLists(text));
+    setText("");
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+      <header>
+        <h1>Add TODO list</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            id="description"
+            value={text}
+            onChange={(e) => setText(e.currentTarget.value)}
+            type="text"
+            required
+          />
+        </form>
       </header>
+      <main>
+        <section className="persist-section">
+          <h2 className="header">Important Todo list</h2>
+        </section>
+        <section className="todo-section">
+          <h2 className="header">Todo list</h2>
+          <TodoLists />
+        </section>
+      </main>
     </div>
   );
 }
