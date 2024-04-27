@@ -1,4 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .App {
   text-align: center;
+}
+
+header {
+  margin: 3em;
+  display: grid;
+}
+
+header h1 {
+  font-size: 4em;
+}
+
+header input {
+  font-size: 1.2em;
+  margin-top: 15px;
+  padding: 1px;
+  width: 300px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #ccc; 
+}
+
+header button {
+  bottom: 20px;
+  right: 20px; 
+  padding: 6px 16px;
+  margin-top: 15px;
+  background-color: whitesmoke;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+header button:hover {
+  background-color: white;
+}
+/* main */
+main h2 {
+  font-size: 2em;
+}
+
+.Todo-container {
+  justify-content: center;
+
+}
+
+.text {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 

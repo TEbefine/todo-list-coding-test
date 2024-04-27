@@ -22,18 +22,14 @@ function PersistLists() {
     <div className="Todo-container">
       {persistTodo.map((text) => (
         <>
-          <input type="checkbox" id="scales" name="scales" />
-          <TextTodo text={text} key={text.id}>
+          <TextTodo text={text} key={text.id} check="persist">
             <PersistButton
               onClickHandler={() => onRemovePersistHandler(text)}
-              /*icon={favoriteIconURL}*/
+              icon={`/image/cancelled.png`}
             >
               remove
             </PersistButton>
           </TextTodo>
-          <button onClick={() => onRemoveHandler(text)}>
-            <img src="/image/close.png" width="15px" />
-          </button>
         </>
       ))}
     </div>

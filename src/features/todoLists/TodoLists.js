@@ -14,27 +14,19 @@ function TodoLists() {
     dispatch(removeTodoList(text));
   };
 
-  const onRemoveTodoHandler = (text) => {
-    dispatch(removeTodoList(text));
-  };
-
   return (
     <div className="Todo-container">
       {todoLists.map((text) => (
-        <>
-          <input type="checkbox" id="scales" name="scales" />
-          <TextTodo text={text} key={text.id}>
+        <div>
+          <TextTodo text={text} key={text.id} check="nomal">
             <PersistButton
               onClickHandler={() => onAddPersistHandler(text)}
-              /*icon={favoriteIconURL}*/
+              icon={`/image/important.png`}
             >
               Add to Favorites
             </PersistButton>
           </TextTodo>
-          <button onClick={() => onRemoveTodoHandler(text)}>
-            <img src="/image/close.png" width="15px" />
-          </button>
-        </>
+        </div>
       ))}
     </div>
   );

@@ -21,25 +21,29 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Add TODO list</h1>
+        <h1>To-Do List</h1>
         <form onSubmit={handleSubmit}>
           <input
             id="description"
             value={text}
             onChange={(e) => setText(e.currentTarget.value)}
             type="text"
+            placeholder="What do you want to do"
             required
           />
+          <div>
+            <button>Add Task</button>
+          </div>
         </form>
       </header>
       <main>
         <section className="persist-section">
-          <h2 className="header">Important Todo list</h2>
+          <h2 className="header">Priority Tasks</h2>
           <PersistLists />
         </section>
         <section className="todo-section">
           <h2 className="header">Todo list</h2>
-          <TodoLists />
+            <TodoLists />
         </section>
       </main>
     </div>
