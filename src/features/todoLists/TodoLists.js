@@ -4,6 +4,10 @@ import TextTodo from "../../Component/TextTodo";
 import PersistButton from "../../Component/PersistButton";
 import { selectTodoList, removeTodoList } from "./todoListsSlice";
 import { addPersistLists } from "../persistLists/persistListsSlice";
+import {
+  addShowLists,
+  removeShowList,
+} from "../showAllStatus/showAllStatusSlice";
 
 function TodoLists() {
   const dispatch = useDispatch();
@@ -12,6 +16,20 @@ function TodoLists() {
   const onAddPersistHandler = (text) => {
     dispatch(addPersistLists(text));
     dispatch(removeTodoList(text));
+    dispatch(
+      addShowLists({
+        show: text,
+        status: "incomp",
+        kind: "persist",
+      })
+    );
+    dispatch(
+      removeShowList({
+        show: text,
+        status: "incomp",
+        kind: "regular",
+      })
+    );
   };
 
   return (

@@ -10,16 +10,23 @@ export default function TextTodo({ text, children, check }) {
   const onRemoveTodoHandler = (text) => {
     if (check === "nomal") {
       dispatch(removeTodoList(text));
+      dispatch(
+        removeShowList({
+          show: text,
+          status: "incomp",
+          kind: "regular",
+        })
+      );
     } else if (check === "persist") {
       dispatch(removePersistLists(text));
+      dispatch(
+        removeShowList({
+          show: text,
+          status: "incomp",
+          kind: "persist",
+        })
+      );
     }
-    dispatch(
-      removeShowList({
-        show: text,
-        status: "incomp",
-        kind: "regular",
-      })
-    );
   };
 
   const toggleCrossedOut = (e) => {
