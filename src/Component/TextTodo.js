@@ -17,35 +17,24 @@ export default function TextTodo({ text, children, check }) {
     }
   };
 
-  // const toggleCrossedOut = (e) => {
-  //   const checkbox = e.target;
-  //   const textName = checkbox.parentNode.querySelector(".text-name");
-  //   dispatch(toggleChecked(text.id));
+  const toggleCrossedOut = (e) => {
+    const checkbox = e.target;
+    const textName = checkbox.parentNode.querySelector(".text-name");
 
-  //   if (checkbox.checked) {
-  //     textName.classList.add("crossed-out");
-  //   } else {
-  //     textName.classList.remove("crossed-out");
-  //   }
-  // };
-
-  // const isChecked = useSelector((state) =>
-  //   state.todos.checkedTodos.includes(text.id)
-  // );
+    if (checkbox.checked) {
+      textName.classList.add("crossed-out");
+    } else {
+      textName.classList.remove("crossed-out");
+    }
+  };
 
   return (
-    <div
-      key={text.id}
-      className="text"
-      tabIndex={0}
-    >
+    <div key={text.id} className="text" tabIndex={0}>
       <input
         type="checkbox"
-        id={`checkbox-${text.id}`}
         name="scales"
         className="checkbox"
-        // onChange={toggleCrossedOut}
-        // checked={isChecked}
+        onChange={toggleCrossedOut}
       />
       {children}
       <h3 className="text-name">{text}</h3>
