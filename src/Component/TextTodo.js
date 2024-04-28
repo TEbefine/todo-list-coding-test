@@ -1,6 +1,9 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { removeTodoList } from "../features/todoLists/todoListsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  removeTodoList,
+  toggleChecked,
+} from "../features/todoLists/todoListsSlice";
 import { removePersistLists } from "../features/persistLists/persistListsSlice";
 import { removeShowList } from "../features/showAllStatus/showAllStatusSlice";
 
@@ -27,25 +30,35 @@ export default function TextTodo({ text, children, check }) {
     }
   };
 
-  const toggleCrossedOut = (e) => {
-    const checkbox = e.target;
-    const textName = checkbox.parentNode.querySelector(".text-name");
+  // const toggleCrossedOut = (e) => {
+  //   const checkbox = e.target;
+  //   const textName = checkbox.parentNode.querySelector(".text-name");
+  //   dispatch(toggleChecked(text.id));
 
-    if (checkbox.checked) {
-      textName.classList.add("crossed-out");
-    } else {
-      textName.classList.remove("crossed-out");
-    }
-  };
+  //   if (checkbox.checked) {
+  //     textName.classList.add("crossed-out");
+  //   } else {
+  //     textName.classList.remove("crossed-out");
+  //   }
+  // };
+
+  // const isChecked = useSelector((state) =>
+  //   state.todos.checkedTodos.includes(text.id)
+  // );
 
   return (
-    <div key={text.id} className="text" tabIndex={0}>
+    <div
+      key={text.id}
+      className="text"
+      tabIndex={0}
+    >
       <input
         type="checkbox"
-        id="scales"
+        id={`checkbox-${text.id}`}
         name="scales"
         className="checkbox"
-        onChange={(e) => toggleCrossedOut(e)}
+        // onChange={toggleCrossedOut}
+        // checked={isChecked}
       />
       {children}
       <h3 className="text-name">{text}</h3>
