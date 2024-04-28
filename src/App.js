@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import TodoLists from "./features/todoLists/TodoLists";
 import "./App.css";
-import { addTodoLists } from "./features/todoLists/todoListsSlice";
+import {
+  addTodoLists,
+  selectTodoList,
+} from "./features/todoLists/todoListsSlice";
 import PersistLists from "./features/persistLists/PersistLists";
+import { selectPersistLists } from "./features/persistLists/persistListsSlice";
 
 function App() {
   const dispatch = useDispatch();
   const [text, setText] = useState("");
+  const todo = useSelector(selectTodoList);
+  const persistTodo = useSelector(selectPersistLists);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,11 +45,19 @@ function App() {
       <main>
         <section className="persist-section">
           <h2 className="header">Priority Tasks</h2>
-          <PersistLists />
+          {persistTodo.length > 0 ? (
+            <PersistLists />
+          ) : (
+            <p className="prepare-message">Top Priorities</p>
+          )}
         </section>
         <section className="todo-section">
           <h2 className="header">Tasks</h2>
+          {todo.length > 0 ? (
             <TodoLists />
+          ) : (
+            <p className="prepare-message">To-Do List</p>
+          )}
         </section>
       </main>
     </div>
