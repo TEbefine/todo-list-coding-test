@@ -1,0 +1,28 @@
+.showCase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;   
+    justify-content: center;
+}
+
+.showCase section {
+    padding: 20px;
+    margin: 10px;
+}
+
+.statusCompSec {
+    border: 1px solid #ccc;
+}
+
+.statusComp h2 {
+    color: rgba(0, 128, 0, 0.7);
+}
+
+.statusComp p {
+    color: rgba(0, 128, 0, 0.7);
+}
+
+.statusIncomp h2,p {
+    color: rgba(255, 0, 0, 0.7);
+}
+

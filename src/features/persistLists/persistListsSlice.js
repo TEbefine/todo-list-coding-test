@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const persistListsSlice = createSlice({
   name: "persistLists",
-  initialState: [],
+  initialState: ["Study for certification exam"],
   reducers: {
     addPersistLists: (state, action) => {
       state.push(action.payload);
