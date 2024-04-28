@@ -14,7 +14,6 @@ export default function TextTodo({ text, children, check }) {
         removeShowList({
           show: text,
           status: "incomp",
-          kind: "regular",
         })
       );
     } else if (check === "persist") {
@@ -23,7 +22,6 @@ export default function TextTodo({ text, children, check }) {
         removeShowList({
           show: text,
           status: "incomp",
-          kind: "persist",
         })
       );
     }

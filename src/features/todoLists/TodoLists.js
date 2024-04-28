@@ -16,20 +16,6 @@ function TodoLists() {
   const onAddPersistHandler = (text) => {
     dispatch(addPersistLists(text));
     dispatch(removeTodoList(text));
-    dispatch(
-      addShowLists({
-        show: text,
-        status: "incomp",
-        kind: "persist",
-      })
-    );
-    dispatch(
-      removeShowList({
-        show: text,
-        status: "incomp",
-        kind: "regular",
-      })
-    );
   };
 
   return (

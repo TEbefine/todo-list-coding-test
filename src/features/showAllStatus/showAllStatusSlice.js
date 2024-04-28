@@ -1,14 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  incomp: {
-    persist: [],
-    regular: [],
-  },
-  comp: {
-    persist: [],
-    regular: [],
-  },
+  incomp: [],
+  comp: [],
 };
 
 const showAllStatusSlice = createSlice({
@@ -16,12 +10,12 @@ const showAllStatusSlice = createSlice({
   initialState,
   reducers: {
     addShowLists: (state, action) => {
-      const { show, status, kind } = action.payload;
-      state[status][kind].push(show);
+      const { show, status } = action.payload;
+      state[status].push(show);
     },
     removeShowList: (state, action) => {
-      const { show, status, kind } = action.payload;
-      state[status][kind] = state[status][kind].filter((text) => text !== show);
+      const { show, status } = action.payload;
+      state[status] = state[status].filter((text) => text !== show);
     },
   },
 });

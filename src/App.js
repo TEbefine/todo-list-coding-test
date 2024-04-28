@@ -28,7 +28,6 @@ function App() {
       addShowLists({
         show: text,
         status: "incomp",
-        kind: "regular",
       })
     );
     setText("");

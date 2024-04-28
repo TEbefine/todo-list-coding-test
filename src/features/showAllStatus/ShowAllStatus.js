@@ -12,26 +12,11 @@ function ShowAllStatus() {
       <section>
         <h3>Done tarks</h3>
         <section></section>
-        <section></section>
       </section>
       <section>
         <h3>Still fight</h3>
         <section>
-          {showList.incomp.persist.map((text) => (
-            <div>
-              <ShowText text={text} key={text.id}>
-                <img
-                  className="show-star"
-                  src="/image/favouriteF.png"
-                  alt="star"
-                  width="18"
-                />
-              </ShowText>
-            </div>
-          ))}
-        </section>
-        <section>
-          {showList.incomp.regular.map((text) => (
+          {showList.incomp.map((text) => (
             <div>
               <ShowText text={text} key={text.id} />
             </div>
