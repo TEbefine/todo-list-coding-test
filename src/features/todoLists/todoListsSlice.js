@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   todoLists: [],
-  checkedTodos: [],
+  checkedTodos: {},
 };
 
 const todoListsSlice = createSlice({
@@ -11,6 +11,7 @@ const todoListsSlice = createSlice({
   reducers: {
     addTodoLists: (state, action) => {
       state.todoLists.push(action.payload);
+      state.checkedTodos[action.payload] = false;
     },
     removeTodoList: (state, action) => {
       state.todoLists = state.todoLists.filter(
