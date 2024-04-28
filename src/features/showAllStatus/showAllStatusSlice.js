@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  incomp: [],
+  incomp: [
+    "Study for certification exam",
+    "Update project timeline",
+    "Schedule dentist appointment",
+    "Research new software",
+  ],
   comp: [],
 };
 

@@ -9,16 +9,26 @@ function ShowAllStatus() {
 
   return (
     <div className={styles.showCase}>
-      <section>
-        <h3>Done tarks</h3>
-        <section></section>
+      <section className={styles.statusComp}>
+        <h2>Completed</h2>
+        <section className={styles.statusCompSec}>
+          {showList.comp.map((text) => (
+            <div>
+              <ShowText text={text} key={text.id}>
+                <p className={styles.statusComp}>•</p>
+              </ShowText>
+            </div>
+          ))}
+        </section>
       </section>
       <section>
-        <h3>Still fight</h3>
-        <section>
+        <h2>incomplete</h2>
+        <section className={styles.statusCompSec}>
           {showList.incomp.map((text) => (
             <div>
-              <ShowText text={text} key={text.id} />
+              <ShowText text={text} key={text.id}>
+                <p>•</p>
+              </ShowText>
             </div>
           ))}
         </section>

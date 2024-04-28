@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   removeTodoList,
   toggleChecked,
 } from "../features/todoLists/todoListsSlice";
-import { removePersistLists } from "../features/persistLists/persistListsSlice";
-import { removeShowList } from "../features/showAllStatus/showAllStatusSlice";
+import {
+  addPersistLists,
+  removePersistLists,
+} from "../features/persistLists/persistListsSlice";
+import {
+  addShowLists,
+  removeShowList,
+} from "../features/showAllStatus/showAllStatusSlice";
+import { selectCheckedStatus } from "../features/todoLists/todoListsSlice";
 
 export default function TextTodo({ text, children, check }) {
   const dispatch = useDispatch();
+  const isChecked = useSelector(selectCheckedStatus);
 
   const onRemoveTodoHandler = (text) => {
     if (check === "nomal") {
@@ -33,11 +41,36 @@ export default function TextTodo({ text, children, check }) {
   const toggleCrossedOut = (e) => {
     const checkbox = e.target;
     const textName = checkbox.parentNode.querySelector(".text-name");
+    dispatch(toggleChecked(text));
 
     if (checkbox.checked) {
       textName.classList.add("crossed-out");
+      dispatch(
+        addShowLists({
+          show: text,
+          status: "comp",
+        })
+      );
+      dispatch(
+        removeShowList({
+          show: text,
+          status: "incomp",
+        })
+      );
     } else {
       textName.classList.remove("crossed-out");
+      dispatch(
+        addShowLists({
+          show: text,
+          status: "incomp",
+        })
+      );
+      dispatch(
+        removeShowList({
+          show: text,
+          status: "comp",
+        })
+      );
     }
   };
 
