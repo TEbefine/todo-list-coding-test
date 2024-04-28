@@ -48,10 +48,15 @@ header button:hover {
 }
 /* main */
 main h2 {
-  font-size: 1.3em;
+  font-size: 1.5em;
   margin-bottom: 1.5em;
 }
-.persist-section{
+
+.prepare-message {
+  opacity: 0.3;
+}
+
+.persist-section {
 margin-bottom: 50px;
 }
 
@@ -69,7 +74,7 @@ margin-bottom: 50px;
   justify-content: center;
   justify-self: center;
   margin-bottom: 20px;
-  font-size: 0.75em;
+  font-size: 0.9em;
   font-weight: 100;
 }
 
@@ -144,4 +149,11 @@ margin-bottom: 50px;
 
 .star-icon:hover {
   opacity: 1;
+}
+
+.crossed-out {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 0, 0, 0.7); 
+  text-decoration-style: solid;
+  text-decoration-thickness: 3px;  
 }
