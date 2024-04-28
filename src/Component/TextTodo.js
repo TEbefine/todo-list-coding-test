@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch, /*useSelector*/} from "react-redux";
 import {
   removeTodoList,
   toggleChecked,
 } from "../features/todoLists/todoListsSlice";
+<<<<<<< HEAD
 <<<<<<< HEAD
 import { removePersistLists } from "../features/persistLists/persistListsSlice";
 =======
@@ -11,16 +12,23 @@ import {
   addPersistLists,
   removePersistLists,
 } from "../features/persistLists/persistListsSlice";
+=======
+import { removePersistLists } from "../features/persistLists/persistListsSlice";
+>>>>>>> c0daa99 (format and add bonus points)
 import {
   addShowLists,
   removeShowList,
 } from "../features/showAllStatus/showAllStatusSlice";
+<<<<<<< HEAD
 import { selectCheckedStatus } from "../features/todoLists/todoListsSlice";
 >>>>>>> a9cf6af (add bonus points)
+=======
+// import { selectCheckedStatus } from "../features/todoLists/todoListsSlice";
+>>>>>>> c0daa99 (format and add bonus points)
 
 export default function TextTodo({ text, children, check }) {
   const dispatch = useDispatch();
-  const isChecked = useSelector(selectCheckedStatus);
+  // const isChecked = useSelector(selectCheckedStatus);
 
   const onRemoveTodoHandler = (text) => {
     if (check === "nomal") {
