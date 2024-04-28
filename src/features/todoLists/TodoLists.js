@@ -23,7 +23,12 @@ function TodoLists() {
               onClickHandler={() => onAddPersistHandler(text)}
               icon={`/image/favourite.png`}
             >
-              <img className="star-icon" src="/image/favouriteY.png" alt="star" width="18" />
+              <img
+                className="star-icon"
+                src="/image/favouriteY.png"
+                alt="star"
+                width="18"
+              />
             </PersistButton>
           </TextTodo>
         </div>

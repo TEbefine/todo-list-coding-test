@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { removeTodoList } from "../features/todoLists/todoListsSlice";
 import { removePersistLists } from "../features/persistLists/persistListsSlice";
+import { removeShowList } from "../features/showAllStatus/showAllStatusSlice";
 
 export default function TextTodo({ text, children, check }) {
   const dispatch = useDispatch();
@@ -12,6 +13,13 @@ export default function TextTodo({ text, children, check }) {
     } else if (check === "persist") {
       dispatch(removePersistLists(text));
     }
+    dispatch(
+      removeShowList({
+        show: text,
+        status: "incomp",
+        kind: "regular",
+      })
+    );
   };
 
   const toggleCrossedOut = (e) => {
