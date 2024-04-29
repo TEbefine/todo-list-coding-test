@@ -29,12 +29,6 @@ header input {
   border-bottom: 1px solid #ccc; 
 }
 
-.underline {
-  border-bottom: 1px solid #ccc;
-  margin: 0 auto;
-  width: 50%;
-}
-
 header button {
   bottom: 20px;
   right: 20px; 
@@ -53,10 +47,6 @@ header button:hover {
   background-color: white;
 }
 /* main */
-main {
-  margin-bottom: 5em;
-}
-
 main h2 {
   font-size: 1.5em;
   margin-bottom: 1.5em;
@@ -166,10 +156,4 @@ margin-bottom: 50px;
   text-decoration-color: rgba(255, 0, 0, 0.7); 
   text-decoration-style: solid;
   text-decoration-thickness: 3px;  
-}
-
-.showContainer {
-  width: 100%; /* or any desired width */
-    display: flex;
-    justify-content: center;
 }

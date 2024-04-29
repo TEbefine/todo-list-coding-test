@@ -8,8 +8,6 @@ import {
 } from "./features/todoLists/todoListsSlice";
 import PersistLists from "./features/persistLists/PersistLists";
 import { selectPersistLists } from "./features/persistLists/persistListsSlice";
-import ShowAllStatus from "./features/showAllStatus/ShowAllStatus";
-import { addShowLists } from "./features/showAllStatus/showAllStatusSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,12 +22,6 @@ function App() {
     }
 
     dispatch(addTodoLists(text));
-    dispatch(
-      addShowLists({
-        show: text,
-        status: "incomp",
-      })
-    );
     setText("");
   };
   return (
@@ -68,10 +60,6 @@ function App() {
           )}
         </section>
       </main>
-      <div className="underline"></div>
-      <div className="showContainer">
-        <ShowAllStatus />
-      </div>
     </div>
   );
 }
