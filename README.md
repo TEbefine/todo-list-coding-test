@@ -7,12 +7,11 @@ This is a React application that allows users to manage their to-do list effecti
 - Users can add new to-do items with a title and optional description.
 - Existing items can be marked as complete or incomplete.
 - Users can delete unwanted items.
-- (Optional) The to-do list data can be persisted in local storage for future use.
+- Filtering (Implemented): View all tasks, completed tasks only, or incomplete tasks only.
+- Local Storage Persistence (Implemented): Saves the to-do list data for future use.
 
 **Planned Enhancements**
 
-- Implement filtering of to-do items (show all, completed, incomplete) (To be completed tomorrow)
-- Add local storage persistence for to-do list data (To be completed tomorrow)
 - Use a CSS framework for styling (To be considered)
 - Implement unit tests for critical components (To be considered)
 - Use TypeScript for type safety (To be considered)
