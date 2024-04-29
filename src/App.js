@@ -19,7 +19,8 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.length === 0) {
+    if (text.length === 0 || todo || persistTodo) {
+      setText("");
       return;
     }
 
