@@ -32,5 +32,3 @@ This is a React application that allows users to manage their to-do list effecti
 This project is built using React and Redux.
 
 I hope this enhanced README.md effectively showcases your project's capabilities and potential for Energy Response Co., Ltd. Feel free to adjust it based on your specific implementation and preferences.
-
-
