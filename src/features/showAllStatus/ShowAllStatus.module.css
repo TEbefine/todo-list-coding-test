@@ -10,10 +10,6 @@
     margin: 10px;
 }
 
-.statusCompSec {
-    border: 1px solid #ccc;
-}
-
 .statusComp h2 {
     color: rgba(0, 128, 0, 0.7);
 }
@@ -22,7 +18,11 @@
     color: rgba(0, 128, 0, 0.7);
 }
 
-.statusIncomp h2,p {
+.statusIncomp h2 {
+    color: rgba(255, 0, 0, 0.7);
+}
+
+.statusIncomp p {
     color: rgba(255, 0, 0, 0.7);
 }
 

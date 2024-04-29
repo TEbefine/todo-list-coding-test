@@ -47,6 +47,10 @@ header button:hover {
   background-color: white;
 }
 /* main */
+main {
+  margin-bottom: 5em;
+}
+
 main h2 {
   font-size: 1.5em;
   margin-bottom: 1.5em;
@@ -156,4 +160,15 @@ margin-bottom: 50px;
   text-decoration-color: rgba(255, 0, 0, 0.7); 
   text-decoration-style: solid;
   text-decoration-thickness: 3px;  
+}
+
+.underline {
+  border-bottom: 1px solid #ccc;
+  width: 75%;
+  margin: 0 auto; 
+}
+
+.showContain {
+  display: flex;
+  justify-content: center; 
 }

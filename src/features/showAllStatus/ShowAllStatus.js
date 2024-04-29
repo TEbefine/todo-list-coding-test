@@ -12,25 +12,33 @@ function ShowAllStatus() {
       <section className={styles.statusComp}>
         <h2>Completed</h2>
         <section className={styles.statusCompSec}>
-          {showList.comp.map((text) => (
-            <div>
-              <ShowText text={text} key={text.id}>
-                <p className={styles.statusComp}>•</p>
-              </ShowText>
-            </div>
-          ))}
+          {showList.comp.length > 0 ? (
+            showList.comp.map((text) => (
+              <div key={text.id}>
+                <ShowText text={text}>
+                  <p className={styles.statusComp}>•</p>
+                </ShowText>
+              </div>
+            ))
+          ) : (
+            <p className="prepare-message">No completed tasks</p>
+          )}
         </section>
       </section>
-      <section>
+      <section className={styles.statusIncomp}>
         <h2>incomplete</h2>
         <section className={styles.statusCompSec}>
-          {showList.incomp.map((text) => (
-            <div>
-              <ShowText text={text} key={text.id}>
-                <p>•</p>
-              </ShowText>
-            </div>
-          ))}
+          {showList.incomp.length > 0 ? (
+            showList.incomp.map((text) => (
+              <div key={text.id}>
+                <ShowText text={text}>
+                  <p className={styles.statusIncomp}>•</p>
+                </ShowText>
+              </div>
+            ))
+          ) : (
+            <p className="prepare-message">completed all tasks</p>
+          )}
         </section>
       </section>
     </div>

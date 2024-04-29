@@ -4,13 +4,10 @@ import TextTodo from "../../Component/TextTodo";
 import PersistButton from "../../Component/PersistButton";
 import { selectTodoList, removeTodoList } from "./todoListsSlice";
 import { addPersistLists } from "../persistLists/persistListsSlice";
-<<<<<<< HEAD
-=======
 // import {
 //   addShowLists,
 //   removeShowList,
 // } from "../showAllStatus/showAllStatusSlice";
->>>>>>> c0daa99 (format and add bonus points)
 
 function TodoLists() {
   const dispatch = useDispatch();
@@ -30,7 +27,12 @@ function TodoLists() {
               onClickHandler={() => onAddPersistHandler(text)}
               icon={`/image/favourite.png`}
             >
-              <img className="star-icon" src="/image/favouriteY.png" alt="star" width="18" />
+              <img
+                className="star-icon"
+                src="/image/favouriteY.png"
+                alt="star"
+                width="18"
+              />
             </PersistButton>
           </TextTodo>
         </div>
