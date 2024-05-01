@@ -4,10 +4,6 @@ import TextTodo from "../../Component/TextTodo";
 import PersistButton from "../../Component/PersistButton";
 import { selectTodoList, removeTodoList } from "./todoListsSlice";
 import { addPersistLists } from "../persistLists/persistListsSlice";
-// import {
-//   addShowLists,
-//   removeShowList,
-// } from "../showAllStatus/showAllStatusSlice";
 
 function TodoLists() {
   const dispatch = useDispatch();
