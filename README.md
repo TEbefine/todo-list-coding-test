@@ -9,12 +9,12 @@ This is a React application that allows users to manage their to-do list effecti
 - Users can delete unwanted items.
 - Filtering (Implemented): View all tasks, completed tasks only, or incomplete tasks only.
 - Local Storage Persistence (Implemented): Saves the to-do list data for future use.
+- Use TypeScript for type safety
 
 **Planned Enhancements**
 
 - Use a CSS framework for styling (To be considered)
 - Implement unit tests for critical components (To be considered)
-- Use TypeScript for type safety (To be considered)
 
 **Installation**
 
