@@ -4,16 +4,17 @@ import {
   removeTodoList,
   toggleChecked,
 } from "../features/todoLists/todoListsSlice";
-import { removePersistLists } from "../features/persistLists/persistListsSlice";
+import {
+  removePersistLists,
+  togglePersistChecked,
+} from "../features/persistLists/persistListsSlice";
 import {
   addShowLists,
   removeShowList,
 } from "../features/showAllStatus/showAllStatusSlice";
-// import { selectCheckedStatus } from "../features/todoLists/todoListsSlice";
 
 export default function TextTodo({ text, completed, children, check }) {
   const dispatch = useDispatch();
-  // const isChecked = useSelector(selectCheckedStatus);
 
   const onRemoveTodoHandler = (text) => {
     if (check === "nomal") {
@@ -38,11 +39,10 @@ export default function TextTodo({ text, completed, children, check }) {
 
   const toggleCrossedOut = (e) => {
     const checkbox = e.target;
-    const textName = checkbox.parentNode.querySelector(".text-name");
     dispatch(toggleChecked(text));
+    dispatch(togglePersistChecked(text));
 
     if (checkbox.checked) {
-      textName.classList.add("crossed-out");
       dispatch(
         addShowLists({
           show: text,
@@ -56,7 +56,6 @@ export default function TextTodo({ text, completed, children, check }) {
         })
       );
     } else {
-      textName.classList.remove("crossed-out");
       dispatch(
         addShowLists({
           show: text,
@@ -82,7 +81,7 @@ export default function TextTodo({ text, completed, children, check }) {
         checked={completed}
       />
       {children}
-      <h3 className="text-name">{text}</h3>
+      <h3 className={`text-name ${completed ? "crossed-out" : ""}`}>{text}</h3>
       <button className="deleteBtn" onClick={() => onRemoveTodoHandler(text)}>
         <img src="/image/close.png" alt="delete" width="12px" />
       </button>

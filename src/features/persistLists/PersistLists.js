@@ -18,12 +18,22 @@ function PersistLists() {
     <div className="Todo-container">
       {persistTodo.map((text) => (
         <>
-          <TextTodo text={text} key={text.id} check="persist">
+          <TextTodo
+            text={text.text}
+            key={text.id}
+            completed={text.completed}
+            check="persist"
+          >
             <PersistButton
               onClickHandler={() => onRemovePersistHandler(text)}
               icon={`/image/favouriteF.png`}
             >
-              <img className="star-icon" src="/image/cancelled.png" alt="star" width="18" />
+              <img
+                className="star-icon"
+                src="/image/cancelled.png"
+                alt="star"
+                width="18"
+              />
             </PersistButton>
           </TextTodo>
         </>
