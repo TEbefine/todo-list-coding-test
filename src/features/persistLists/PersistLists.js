@@ -10,20 +10,35 @@ function PersistLists() {
   const dispatch = useDispatch();
 
   const onRemovePersistHandler = (text) => {
-    dispatch(addTodoLists(text));
-    dispatch(removePersistLists(text));
+    dispatch(
+      addTodoLists({
+        text: text.text,
+        completed: text.completed,
+      })
+    );
+    dispatch(removePersistLists(text.text));
   };
 
   return (
     <div className="Todo-container">
       {persistTodo.map((text) => (
         <>
-          <TextTodo text={text} key={text.id} check="persist">
+          <TextTodo
+            text={text.text}
+            key={text.id}
+            completed={text.completed}
+            check="persist"
+          >
             <PersistButton
               onClickHandler={() => onRemovePersistHandler(text)}
               icon={`/image/favouriteF.png`}
             >
-              <img className="star-icon" src="/image/cancelled.png" alt="star" width="18" />
+              <img
+                className="star-icon"
+                src="/image/cancelled.png"
+                alt="star"
+                width="18"
+              />
             </PersistButton>
           </TextTodo>
         </>

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   todoLists: [
     { text: "Update project timeline", completed: false },
-    { text: "Schedule dentist appointment", completed: true },
+    { text: "Schedule dentist appointment", completed: false },
     { text: "Research new software", completed: false },
   ],
 };
@@ -17,7 +17,7 @@ const todoListsSlice = createSlice({
     },
     removeTodoList: (state, action) => {
       state.todoLists = state.todoLists.filter(
-        (todo) => todo !== action.payload
+        (todo) => todo.text !== action.payload
       );
     },
     toggleChecked: (state, action) => {
