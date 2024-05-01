@@ -11,7 +11,7 @@ import {
 } from "../features/showAllStatus/showAllStatusSlice";
 // import { selectCheckedStatus } from "../features/todoLists/todoListsSlice";
 
-export default function TextTodo({ text, children, check }) {
+export default function TextTodo({ text, completed, children, check }) {
   const dispatch = useDispatch();
   // const isChecked = useSelector(selectCheckedStatus);
 
@@ -79,6 +79,7 @@ export default function TextTodo({ text, children, check }) {
         name="scales"
         className="checkbox"
         onChange={toggleCrossedOut}
+        checked={completed}
       />
       {children}
       <h3 className="text-name">{text}</h3>

@@ -22,7 +22,7 @@ function TodoLists() {
     <div className="Todo-container">
       {todoLists.map((text) => (
         <div>
-          <TextTodo text={text} key={text.id} check="nomal">
+          <TextTodo text={text.text} key={text.id} completed={text.completed} check="nomal">
             <PersistButton
               onClickHandler={() => onAddPersistHandler(text)}
               icon={`/image/favourite.png`}

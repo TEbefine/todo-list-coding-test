@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  todoLists: ["Update project timeline", "Schedule dentist appointment", "Research new software"],
-  checkedTodos: {},
+  todoLists: [
+    { text: "Update project timeline", completed: false },
+    { text: "Schedule dentist appointment", completed: true },
+    { text: "Research new software", completed: false },
+  ],
 };
 
 const todoListsSlice = createSlice({
@@ -11,7 +14,6 @@ const todoListsSlice = createSlice({
   reducers: {
     addTodoLists: (state, action) => {
       state.todoLists.push(action.payload);
-      state.checkedTodos[action.payload] = false;
     },
     removeTodoList: (state, action) => {
       state.todoLists = state.todoLists.filter(
@@ -19,8 +21,12 @@ const todoListsSlice = createSlice({
       );
     },
     toggleChecked: (state, action) => {
-      const text = action.payload;
-      state.checkedTodos[text] = !state.checkedTodos[text];
+      const index = state.todoLists.findIndex(
+        (todo) => todo.text === action.payload
+      );
+      if (index !== -1) {
+        state.todoLists[index].completed = !state.todoLists[index].completed;
+      }
     },
   },
 });
@@ -29,7 +35,5 @@ export const { addTodoLists, removeTodoList, toggleChecked } =
   todoListsSlice.actions;
 
 export const selectTodoList = (state) => state.todo.todoLists;
-
-export const selectCheckedStatus = (state) => state.todo.todoLists.checkedTodos;
 
 export default todoListsSlice.reducer;

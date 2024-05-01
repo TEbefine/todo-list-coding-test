@@ -28,7 +28,12 @@ function App() {
       return;
     }
 
-    dispatch(addTodoLists(text));
+    dispatch(
+      addTodoLists({
+        text,
+        completed: false,
+      })
+    );
     dispatch(
       addShowLists({
         show: text,
