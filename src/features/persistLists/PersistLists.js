@@ -10,8 +10,13 @@ function PersistLists() {
   const dispatch = useDispatch();
 
   const onRemovePersistHandler = (text) => {
-    dispatch(addTodoLists(text));
-    dispatch(removePersistLists(text));
+    dispatch(
+      addTodoLists({
+        text: text.text,
+        completed: text.completed,
+      })
+    );
+    dispatch(removePersistLists(text.text));
   };
 
   return (

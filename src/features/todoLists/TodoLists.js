@@ -14,15 +14,25 @@ function TodoLists() {
   const todoLists = useSelector(selectTodoList);
 
   const onAddPersistHandler = (text) => {
-    dispatch(addPersistLists(text));
-    dispatch(removeTodoList(text));
+    dispatch(
+      addPersistLists({
+        text: text.text,
+        completed: text.completed,
+      })
+    );
+    dispatch(removeTodoList(text.text));
   };
 
   return (
     <div className="Todo-container">
       {todoLists.map((text) => (
         <div>
-          <TextTodo text={text.text} key={text.id} completed={text.completed} check="nomal">
+          <TextTodo
+            text={text.text}
+            key={text.id}
+            completed={text.completed}
+            check="nomal"
+          >
             <PersistButton
               onClickHandler={() => onAddPersistHandler(text)}
               icon={`/image/favourite.png`}
